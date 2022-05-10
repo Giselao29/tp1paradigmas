@@ -17,7 +17,7 @@ object tatooine{
 		if(potenciaDefensores>valorAtaque){
 			return "Defensa satisfactoria, no pierde población"
 		}else{
-			poblacion=poblacion*0.9
+			poblacion= poblacion*0.9
 			return "Pierde el 10% de la población, quedan ahora:"+poblacion
 		}
 	}
@@ -35,5 +35,10 @@ object tatooine{
 	method eliminarDefensor(nombre){
 		listaDefensores.remove(nombre)
 	}
-	
+// PUNTO 2 -Personaje mas poderoso 	
+	method personajePoderoso() {
+		return 	listaDefensores.max({defensor=>defensor.potenciaFinal()})
+	}
+// SEGUNDA PARTE	
+
 }

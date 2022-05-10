@@ -1,3 +1,4 @@
+//Punto 1 - modelar los personajes
 object arturito{
 	var carga=50
 	
@@ -54,6 +55,7 @@ object han{
 	
 }
 
+// Punto 3 -inventar personaje Leia
 object leia{
 	
 	var energia
@@ -64,5 +66,39 @@ object leia{
 	
 	method potenciaFinal(){
 		return energia
+	}
+}
+
+// 2da PARTE- ANAKIN SKYWALKER
+
+object anakin {
+	var potencia 
+	var midiclorianos = 0
+	
+	
+	method fuerzaLadoOscuro(numeroFuerza) {
+		return numeroFuerza
+	}
+	
+
+	method midiclorianos(cantidad){
+		return midiclorianos = midiclorianos + cantidad
+	}
+	
+	
+	method LadoLuminoso() {
+	 potencia = ((midiclorianos/1000) + self.EnergiaSableDeLuz()) * 10
+	 return "Jedi"	
+	 return potencia
+	}
+	
+	method LadoOscuro() {
+		potencia = ((midiclorianos/1000) + self.EnergiaSableDeLuz()) * self.fuerzaLadoOscuro())
+		return "Sith"
+		return potencia
+		
+		method EnergiaSableDeLuz(energia) {
+			return energia 
+		}
 	}
 }
