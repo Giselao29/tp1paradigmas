@@ -105,13 +105,13 @@ object anakin {
 			esperanza=0
 			return tipo
 		}else{
-			if(cargaEmocional>100){
+			if(cargaEmocional<100){
 			tipo="Jedi"
-			esperanza=50
-			fuerzaLadoOscuro=fuerzaLadoOscuro/2
 			return tipo
 			}else{
 				tipo="Jedi"
+				esperanza=50
+				fuerzaLadoOscuro=fuerzaLadoOscuro/2
 				return tipo
 			}
 		}
