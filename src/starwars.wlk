@@ -72,42 +72,89 @@ object leia{
 // 2da PARTE- ANAKIN SKYWALKER
 
 object anakin {
-	var potencia 
+	var potencia
+	var energia 
 	var midiclorianos = 0
 	var esperanza = 50
+	var cargaEmocional=100
+	var fuerzaLadoOscuro=0
+	var tipo="Jedi"
+	const amigos=[]
+	const armas=["sable"]
 	
-	method fuerzaLadoOscuro(numeroFuerza) {
-		return numeroFuerza
+	
+	
+	method energiaSable(){
+		return energia
 	}
 	
-
+	
 	method midiclorianos(cantidad){
-		return midiclorianos = midiclorianos + cantidad
+		midiclorianos=midiclorianos + cantidad
+		return midiclorianos + cantidad
+		
+	}
+	
+	
+	method cargaEmocional(){
+		return cargaEmocional
+	}
+	
+	method lado(){
+		cargaEmocional=cargaEmocional+esperanza
+		if(cargaEmocional<=0){
+			tipo="Sith"
+			fuerzaLadoOscuro=fuerzaLadoOscuro+1
+			esperanza=0
+			return tipo
+		}else{
+			if(cargaEmocional>100){
+			tipo="Jedi"
+			esperanza=50
+			fuerzaLadoOscuro=fuerzaLadoOscuro/2
+			return tipo
+			}else{
+				tipo="Jedi"
+				return tipo
+			}
+		}
 	}
 	
 //Revisar metodos de lado luminoso y oscuro	
-	method LadoLuminoso() {
-	 potencia = ((midiclorianos/1000) + self.EnergiaSableDeLuz()) * 10
-	 return "Jedi"	
+
+	method ladoLuminoso(){
+	 tipo="Jedi"
+	 esperanza=50
+	 potencia = ((midiclorianos/1000) + self.energiaSable() * 10)
 	 return potencia
 	}
 	
-	method LadoOscuro() {
-		potencia = ((midiclorianos/1000) + self.EnergiaSableDeLuz()) * self.fuerzaLadoOscuro())
-		return "Sith"
+	method ladoOscuro(){
+		esperanza=0
+		potencia = ((midiclorianos/1000) + self.energiaSable()) * fuerzaLadoOscuro
+		tipo="Sith"
 		return potencia
-		
-		method EnergiaSableDeLuz(energia) {
-			return energia 
-		}
-	}
-// Revisar var cargaEmocional y disminuir a la mitad el nivel de fuerza del lado oscuro	
-	method convertirseEnSith {
-		if (esperanza<=0) { return "SITH"} 
 	}
 	
-	method convertirseEnJedi {
-		if (cargaEmocional>100) { return "JEDI"}
-		return esperanza = 0
+	method conseguirAmigo(amigo){
+		amigos.add(amigo)
+		cargaEmocional=cargaEmocional+amigo.potenciaFinal()
 	}
+	
+	method batalla(bajas){
+		cargaEmocional=cargaEmocional-bajas
+	}
+	
+	method carrera(){
+		cargaEmocional=cargaEmocional+5
+	}
+	
+	method perdidaAmada(){
+		cargaEmocional=-1000000
+	}
+	
+	method hijo(){
+		cargaEmocional=1000000
+	}
+	
 }
