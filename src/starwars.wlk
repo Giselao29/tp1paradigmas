@@ -82,12 +82,9 @@ object anakin {
 	const amigos=[]
 	const armas=["sable"]
 	
-	
-	
 	method energiaSable(){
 		return energia
 	}
-	
 	
 	method midiclorianos(cantidad){
 		midiclorianos=midiclorianos + cantidad
