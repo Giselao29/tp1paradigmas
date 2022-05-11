@@ -85,7 +85,7 @@ object anakin {
 		return midiclorianos = midiclorianos + cantidad
 	}
 	
-//Revisar metodos de lado luminoso y oscuro	
+// Revisar metodos de lado luminoso y oscuro	
 	method LadoLuminoso() {
 	 potencia = ((midiclorianos/1000) + self.EnergiaSableDeLuz()) * 10
 	 return "Jedi"	
@@ -101,7 +101,7 @@ object anakin {
 			return energia 
 		}
 	}
-//Revisar var cargaEmocional y disminuir a la mitad el nivel de fuerza del lado oscuro	
+// Revisar var cargaEmocional y disminuir a la mitad el nivel de fuerza del lado oscuro	
 	method convertirseEnSith {
 		if (esperanza<=0) { return "SITH"} 
 	}
