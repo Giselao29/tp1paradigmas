@@ -101,7 +101,7 @@ object anakin {
 			return energia 
 		}
 	}
-// Revisar var cargaEmocional y disminuir a la mitad el nivel de fuerza del lado oscuro	
+//Revisar var cargaEmocional y disminuir a la mitad el nivel de fuerza del lado oscuro	
 	method convertirseEnSith {
 		if (esperanza<=0) { return "SITH"} 
 	}
