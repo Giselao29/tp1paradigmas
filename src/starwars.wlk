@@ -85,7 +85,7 @@ object anakin {
 		return midiclorianos = midiclorianos + cantidad
 	}
 	
-// Revisar metodos de lado luminoso y oscuro	
+//Revisar metodos de lado luminoso y oscuro	
 	method LadoLuminoso() {
 	 potencia = ((midiclorianos/1000) + self.EnergiaSableDeLuz()) * 10
 	 return "Jedi"	
