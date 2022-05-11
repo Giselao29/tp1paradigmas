@@ -76,11 +76,32 @@ object anakin {
 	var energia 
 	var midiclorianos = 0
 	var esperanza = 50
-	var cargaEmocional
+	var cargaEmocional=0
 	var fuerzaLadoOscuro=0
 	var tipo="Jedi"
 	const amigos=[]
 	const armas=["sable"]
+	
+	method cargaEmocional(edad){
+		if(edad<=20){
+			cargaEmocional=5000*(22-edad)
+			return cargaEmocional
+		}else{
+			if(edad<23){
+				cargaEmocional=10000-5000*(edad-21)
+				return cargaEmocional
+			}else{
+				if(edad==23){
+					cargaEmocional=0
+					return cargaEmocional
+				}else{
+					cargaEmocional=-(500*(edad-23))
+					return cargaEmocional
+				}
+			}
+		}
+	}
+	
 	
 	method energiaSable(){
 		return energia
