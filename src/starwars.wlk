@@ -76,7 +76,7 @@ object anakin {
 	var energia 
 	var midiclorianos = 0
 	var esperanza = 50
-	var cargaEmocional=100
+	var cargaEmocional
 	var fuerzaLadoOscuro=0
 	var tipo="Jedi"
 	const amigos=[]
@@ -87,25 +87,25 @@ object anakin {
 	}
 	
 	method midiclorianos(cantidad){
-		midiclorianos=midiclorianos + cantidad
-		return midiclorianos + cantidad
+		midiclorianos= midiclorianos + cantidad
+		return midiclorianos 
 		
 	}
 	
+	//elimine el método carga emocional
 	
-	method cargaEmocional(){
-		return cargaEmocional
-	}
-	
+
 	method lado(){
-		cargaEmocional=cargaEmocional+esperanza
-		if(cargaEmocional<=0){
+		//cambie cargaEmocional por esperanza
+		esperanza = esperanza + cargaEmocional
+		//cambie cargaEmocional por esperanza
+		if(esperanza<=0){
 			tipo="Sith"
 			fuerzaLadoOscuro=fuerzaLadoOscuro+1
 			esperanza=0
 			return tipo
 		}else{
-			if(cargaEmocional<100){
+			if(cargaEmocional>100){
 			tipo="Jedi"
 			return tipo
 			}else{
@@ -122,11 +122,14 @@ object anakin {
 	method ladoLuminoso(){
 	 tipo="Jedi"
 	 esperanza=50
-	 potencia = ((midiclorianos/1000) + self.energiaSable() * 10)
+	 //cambie lugar de paréntesis
+	 potencia = ((midiclorianos/1000) + self.energiaSable()) * 10
 	 return potencia
 	}
 	
-	method ladoOscuro(){
+	//agregué como argumento fuerzaLadoOscuroActual
+	method ladoOscuro(fuerzaLadoOscuroActual){
+		fuerzaLadoOscuro = fuerzaLadoOscuroActual
 		esperanza=0
 		potencia = ((midiclorianos/1000) + self.energiaSable()) * fuerzaLadoOscuro
 		tipo="Sith"
@@ -135,7 +138,7 @@ object anakin {
 	
 	method conseguirAmigo(amigo){
 		amigos.add(amigo)
-		cargaEmocional=cargaEmocional+amigo.potenciaFinal()
+		cargaEmocional = cargaEmocional + amigo.potenciaFinal()
 	}
 	
 	method batalla(bajas){
