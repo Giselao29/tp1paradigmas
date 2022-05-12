@@ -5,7 +5,7 @@ object tatooine{
 	var potenciaDefensores
 	var poblacion=1000000
 	var valorAtaque
-	const listaDefensores=[han,arturito]
+	var property listaDefensores=[han,arturito]
 	
 	method defensores(){
 		return listaDefensores
@@ -30,10 +30,12 @@ object tatooine{
 	method agregarDefensor(nombre){
 		listaDefensores.add(nombre)
 		arturito.cargarBateria()
+		return listaDefensores	
 	}
 	
 	method eliminarDefensor(nombre){
 		listaDefensores.remove(nombre)
+		return listaDefensores
 	}
 // PUNTO 2 -Personaje mas poderoso 	
 	method personajePoderoso() {

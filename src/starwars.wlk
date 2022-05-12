@@ -21,9 +21,9 @@ object arturito{
 }
 
 object han{
-	
+	 
 	var energia
-	const armas=["blaster"]
+	var property armas=["blaster"]
 	const cargas=[70]
 	
 	
